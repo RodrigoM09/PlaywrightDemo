@@ -2,17 +2,14 @@
 
 const { test, expect } = require("@playwright/test");
 
-
-test('My first test', () => {
-    
+// Async keyword means the function will return a promise.
+test("My first test", async ({ page }) => {
+  // The await keyword means the function will wait for the promise to resolve.
+  await page.goto("https://playwright.dev/");
+  await expect(page).toHaveTitle(
+    "Fast and reliable end-to-end testing for modern web apps | Playwright"
+  );
 });
-
-
-
-
-
-
-
 
 // const { hello, helloWorld } = require("./demo/hello.js");
 
